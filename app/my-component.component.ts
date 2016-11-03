@@ -19,7 +19,7 @@ export class MyComponent {
 
     constructor() {
         this.title = 'Hello world!';
-        this.imageLink = 'http://lorempixel.com/400/200';
+        this.imageLink = 'http://placehold.it/350x150';
         this.note;
     }
 

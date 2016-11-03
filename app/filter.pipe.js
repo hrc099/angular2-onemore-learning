@@ -9,28 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.todos = [{
-                text: 'Wash dishes'
-            }, {
-                text: 'Take out trash'
-            }];
-        this.showHeading = true;
-        this.name = "John";
-        this.colors = ['Red', 'Blue', 'Green'];
-        this.name_2 = "Michael Jordan";
-        this.birthday = new Date(1960, 10, 29);
-        this.price = 500;
+var FilterArrayPipe = (function () {
+    function FilterArrayPipe() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/app.component.html'
-        }), 
+    FilterArrayPipe.prototype.transform = function (value, args) {
+        if (!args[0]) {
+            return value;
+        }
+        else if (value) {
+            return value.filter(function (item) {
+                for (var key in item) {
+                    if ((typeof item[key] === 'string' || item[key] instanceof String) &&
+                        (item[key].indexOf(args[0]) !== -1)) {
+                        return true;
+                    }
+                }
+            });
+        }
+    };
+    FilterArrayPipe = __decorate([
+        core_1.Pipe({ name: 'filter' }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], FilterArrayPipe);
+    return FilterArrayPipe;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.FilterArrayPipe = FilterArrayPipe;
+//# sourceMappingURL=filter.pipe.js.map

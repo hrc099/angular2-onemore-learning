@@ -13,6 +13,8 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var my_component_component_1 = require('./my-component.component');
+var posts_component_1 = require('./posts.component');
+var filter_pipe_1 = require('./filter.pipe');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,7 +23,9 @@ var AppModule = (function () {
             imports: [platform_browser_1.BrowserModule,
                 forms_1.FormsModule],
             declarations: [app_component_1.AppComponent,
-                my_component_component_1.MyComponent],
+                my_component_component_1.MyComponent,
+                posts_component_1.PostsComponent,
+                filter_pipe_1.FilterArrayPipe],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

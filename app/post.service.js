@@ -9,28 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.todos = [{
-                text: 'Wash dishes'
-            }, {
-                text: 'Take out trash'
-            }];
-        this.showHeading = true;
-        this.name = "John";
-        this.colors = ['Red', 'Blue', 'Green'];
-        this.name_2 = "Michael Jordan";
-        this.birthday = new Date(1960, 10, 29);
-        this.price = 500;
+var PostService = (function () {
+    function PostService() {
+        this.posts = [
+            {
+                title: 'Post One',
+                body: 'Body for post one'
+            },
+            {
+                title: 'Post Two',
+                body: 'Body for post two'
+            },
+            {
+                title: 'Post Three',
+                body: 'Body for post three'
+            }
+        ];
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/app.component.html'
-        }), 
+    PostService.prototype.getPosts = function () {
+        return this.posts;
+    };
+    PostService.prototype.addPost = function (newPost) {
+        this.posts.push(newPost);
+    };
+    PostService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], PostService);
+    return PostService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.PostService = PostService;
+//# sourceMappingURL=post.service.js.map

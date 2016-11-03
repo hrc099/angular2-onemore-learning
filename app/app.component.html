@@ -1,0 +1,40 @@
+<h1 *ngIf="showHeading">My First Angular App</h1>
+            <my-component></my-component>
+            <br>
+            <span [ngSwitch]="name">
+              <span *ngSwitchCase="'John'">
+              John
+              </span>
+              <span *ngSwitchCase="'Sam'">
+              Sam
+              </span>
+              <span *ngSwitchCase="'Jeff'">
+              Jeff
+              </span>
+              <span *ngSwitchDefault>
+              Mate alrite
+              </span>
+            </span>
+            <br>
+            <ul>
+              <li *ngFor = "let color of colors">
+                {{ color }}
+              </li>
+            </ul>
+            <br>
+            <h2>{{name_2 | uppercase}}</h2>
+            <h2>{{name_2 | lowercase}}</h2>
+            <h2>{{birthday | date}}</h2>
+            <h2>{{birthday | date:'shortDate'}}</h2>
+            <h2>{{birthday | date:'longDate'}}</h2>
+            <h2>{{price | currency:'USD'}}</h2>
+            <h2>{{price | currency:'USD':'true'}}</h2>
+            <h2>{{price | currency:'GBP':'true'}}</h2>
+            <input type="text" [(ngModel)]="filterText">
+            <ul>
+              <li *ngFor = "let todo of todos">
+                {{todo.text}}
+              </li>
+            </ul>
+            <br>
+            <posts></posts>

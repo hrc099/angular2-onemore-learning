@@ -12,7 +12,7 @@ var core_1 = require('@angular/core');
 var MyComponent = (function () {
     function MyComponent() {
         this.title = 'Hello world!';
-        this.imageLink = 'http://lorempixel.com/400/200';
+        this.imageLink = 'http://placehold.it/350x150';
         this.note;
     }
     MyComponent.prototype.runClick = function () {
